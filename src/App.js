@@ -3,14 +3,14 @@ import './App.css';
 import TextForm from './components/TextForm'; 
 import Alert from './components/Alert';
 import React, {useState} from 'react'
-// import About from './components/About';
+import About from './components/About';
 
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
 
-// } from "react-router-dom";
+} from "react-router-dom";
 
 
 
@@ -57,24 +57,24 @@ const toggleMode = () =>{
 
   return (
     <>
-    {/* <Router> */}
+    <Router>
 
   <Navbar title="Text Analyser" aboutText = 'About Us' mode = {mode} toggleMode ={toggleMode}  emode={emode}/>
    
 
-  {/* <Routes>
-          <Route path="/about" element={ <About />}/>
+  <Routes>
+          <Route path="/about" element={ <About mode={mode}/>}/>
 
-          <Route path="/" element={<TextForm showAlert={showAlert} heading = "Enter Text To Analyze Below" mode = {mode}/>}/>
+          <Route path="/" element={<div className="container">
+  <TextForm showAlert={showAlert} heading = "Enter Text To Analyze Below" mode = {mode}/>  
+  </div>}/>
           
         </Routes>
  
        
-  </Router> */}
-  <div className="container">
-  <TextForm showAlert={showAlert} heading = "Enter Text To Analyze Below" mode = {mode}/>  
-  </div> 
-  <Alert alert = {alert}/>  
+  </Router>
+  <div className="container my-3"> <Alert alert = {alert}/></div>
+   
 
   </>
   );
